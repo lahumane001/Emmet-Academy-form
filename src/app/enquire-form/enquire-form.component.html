@@ -32,8 +32,8 @@
                     <label>Referred by</label>
                     <input type="text" name="" id="" class="form-control" formControlName="refer">
                 </div>
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Request a callback</button>
-                <p class="text-center mt-2">already resister? <a routerLink="/login" class="text-primary" >login</a></p>
+                <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="formData.invalid">Request a callback</button>
+                <p class="text-center mt-2">already register? <a routerLink="/login" class="text-primary" >login</a></p>
             </form>
         </div>
     </div>
