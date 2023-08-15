@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { EnquireFormComponent } from './enquire-form/enquire-form.component';
 import { DataHandlerService } from './shared/dataHandler.service';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,8 +20,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
-    ReactiveFormsModule
   ],
   providers: [
     DataHandlerService

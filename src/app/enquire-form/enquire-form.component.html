@@ -4,20 +4,25 @@
             <div class="my-3 text-center"><img src="../../assets/images/logo.png" width="150"></div>
             <form [formGroup]="formData" (ngSubmit)="onSubmit()">
                 <div class="form-group">
-                    <label>First Name <span class="text-danger font-weight-bold">*</span></label>
-                    <input type="text" name="" id="" class="form-control" formControlName="firstname">
+                    <label for="firstname">First Name <span class="text-danger font-weight-bold">*</span></label>
+                    <input type="text" name="firstname" id="firstname" class="form-control" formControlName="firstName">
+                    <span class="text-danger" *ngIf="!formData.get('firstName').valid && formData.get('firstName').touched">First Name is Requried...</span>
+                   
                 </div>
                 <div class="form-group">
-                    <label>Last Name <span class="text-danger font-weight-bold">*</span></label>
-                    <input type="text" name="" id="" class="form-control"  formControlName="lastname">
+                    <label for="lastname">Last Name <span class="text-danger font-weight-bold">*</span></label>
+                    <input type="text" name="lastname" id="lastname" class="form-control"  formControlName="lastName">
+                    <span class="text-danger" *ngIf="!formData.get('lastName').valid && formData.get('lastName').touched">Last Name is Requried...</span>
                 </div>
                 <div class="form-group">
-                    <label>Phone Number <span class="text-danger font-weight-bold">*</span></label>
-                    <input type="number"  max="10" name="" id="" class="form-control"  formControlName="contact">
+                    <label for="contact">Phone Number <span class="text-danger font-weight-bold">*</span></label>
+                    <input type="text"  max="10" name="contact" id="contact" class="form-control"  formControlName="contact">
+                    <span class="text-danger" *ngIf="!formData.get('contact').valid && formData.get('contact').touched">contact is Requried...</span>
                 </div>
                 <div class="form-group">
-                    <label>Highest Qualification</label>
-                    <input type="text" name="" id="" class="form-control"  formControlName="qualification">
+                    <label for="qualification">Highest Qualification</label>
+                    <input type="text" name="qualification" id="qualification" class="form-control"  formControlName="qualification">
+                    <span class="text-danger" *ngIf="!formData.get('qualification').valid && formData.get('qualification').touched">qualification is Requried...</span>
                     <small class="text-black-50">BE Computer, BCA, Bcom, BA etc</small>
                 </div>
                 <div class="form-group">
@@ -27,10 +32,12 @@
                         <option>Frontend Development</option>
                         <option>UX Design</option>
                     </select>
+                    <span class="text-danger" *ngIf="!formData.get('course').valid && formData.get('course').touched">course is Requried...</span>
                 </div>
                 <div class="form-group">
-                    <label>Referred by</label>
-                    <input type="text" name="" id="" class="form-control" formControlName="refer">
+                    <label for="refer">Referred by</label>
+                    <input type="text" name="refer" id="refer" class="form-control" formControlName="refer">
+                    
                 </div>
                 <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="formData.invalid">Request a callback</button>
                 <p class="text-center mt-2">already register? <a routerLink="/login" class="text-primary" >login</a></p>
